@@ -18,5 +18,5 @@ public class Article {
     int stock;
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name="idModel")
-    private Model model;
+    private Modelo modelo;
 }

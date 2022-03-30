@@ -1,7 +1,7 @@
 package com.lamarrulla.proyectointegrador.repository;
 
-import com.lamarrulla.proyectointegrador.entity.Model;
+import com.lamarrulla.proyectointegrador.entity.Modelo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ModelRespository extends JpaRepository<Model, Long> {
+public interface ModelRespository extends JpaRepository<Modelo, Long> {
 }
