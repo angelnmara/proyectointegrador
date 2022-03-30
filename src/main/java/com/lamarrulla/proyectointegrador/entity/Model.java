@@ -12,4 +12,7 @@ public class Model {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int idModel;
     String description;
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name="idBrand")
+    private Brand brand;
 }
