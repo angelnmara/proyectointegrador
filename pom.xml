@@ -67,11 +67,6 @@
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
-			<artifactId>springfox-boot-starter</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
@@ -97,9 +92,16 @@
 							<version>1.4.2.Final</version>
 						</path>
 					</annotationProcessorPaths>
+					<compilerArgs>
+						<compilerArg>
+							-Amapstruct.defaultComponentModel=spring
+						</compilerArg>
+						<compilerArg>
+							-Amapstruct.unmappedTargetPolicy=IGNORE
+						</compilerArg>
+					</compilerArgs>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

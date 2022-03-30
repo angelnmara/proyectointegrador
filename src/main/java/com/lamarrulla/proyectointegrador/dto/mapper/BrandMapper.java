@@ -6,6 +6,6 @@ import org.mapstruct.Mapper;
 
 @Mapper
 public interface BrandMapper {
-    public BrandDTO toDTO(Brand brand);
-    public Brand toEntity(BrandDTO brandDTO);
+    BrandDTO toDTO(Brand brand);
+    Brand toEntity(BrandDTO brandDTO);
 }
