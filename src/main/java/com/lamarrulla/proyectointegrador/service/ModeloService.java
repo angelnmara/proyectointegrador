@@ -8,4 +8,5 @@ public interface ModeloService {
     ModeloDTO save(ModeloDTO modeloDTO);
     ModeloDTO findById(Long id);
     List<ModeloDTO> findAll();
+    void delete(ModeloDTO modeloDTO);
 }

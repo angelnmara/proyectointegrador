@@ -33,4 +33,9 @@ public class ModeloServiceImpl implements ModeloService {
     public List<ModeloDTO> findAll() {
         return modeloMapper.toDTOList(modelRespository.findAll());
     }
+
+    @Override
+    public void delete(ModeloDTO modeloDTO) {
+        modelRespository.delete(modeloMapper.toEnitty(modeloDTO));
+    }
 }

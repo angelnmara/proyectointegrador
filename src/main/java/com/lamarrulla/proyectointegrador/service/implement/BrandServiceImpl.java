@@ -33,4 +33,9 @@ public class BrandServiceImpl implements BrandService {
     public BrandDTO save(BrandDTO brandDTO) {
         return brandMapper.toDTO(brandRepository.save(brandMapper.toEntity(brandDTO)));
     }
+
+    @Override
+    public void delete(BrandDTO brandDTO) {
+        brandRepository.delete(brandMapper.toEntity(brandDTO));
+    }
 }

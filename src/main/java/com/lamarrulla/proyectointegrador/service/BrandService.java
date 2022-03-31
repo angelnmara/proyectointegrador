@@ -8,4 +8,5 @@ public interface BrandService {
     BrandDTO findById(Long Id);
     List<BrandDTO> findAll();
     BrandDTO save(BrandDTO brandDTO);
+    void delete(BrandDTO brandDTO);
 }
