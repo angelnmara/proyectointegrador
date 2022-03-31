@@ -1,10 +1,10 @@
 package com.lamarrulla.proyectointegrador.controller;
 
 import com.lamarrulla.proyectointegrador.dto.BrandDTO;
+import com.lamarrulla.proyectointegrador.dto.ModeloDTO;
 import com.lamarrulla.proyectointegrador.service.BrandService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BrandController {
@@ -16,7 +16,12 @@ public class BrandController {
     }
 
     @GetMapping("/brand/{id}")
-    public BrandDTO getBrandById(@PathVariable Long id){
-        return brandService.findById(id);
+    public ResponseEntity<BrandDTO> getBrandById(@PathVariable Long id){
+        return ResponseEntity.ok(brandService.findById(id));
+    }
+
+    @PostMapping("/brand")
+    public ResponseEntity<BrandDTO> save(@RequestBody BrandDTO brandDTO){
+        return ResponseEntity.ok(brandService.save(brandDTO));
     }
 }

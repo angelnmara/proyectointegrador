@@ -6,6 +6,8 @@ import com.lamarrulla.proyectointegrador.repository.ModelRespository;
 import com.lamarrulla.proyectointegrador.service.ModeloService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ModeloServiceImpl implements ModeloService {
 
@@ -20,5 +22,15 @@ public class ModeloServiceImpl implements ModeloService {
     @Override
     public ModeloDTO save(ModeloDTO modeloDTO) {
         return modeloMapper.toDTO(modelRespository.save(modeloMapper.toEnitty(modeloDTO)));
+    }
+
+    @Override
+    public ModeloDTO findById(Long id) {
+        return modeloMapper.toDTO(modelRespository.findById(id).get());
+    }
+
+    @Override
+    public List<ModeloDTO> findAll() {
+        return modeloMapper.toDTOList(modelRespository.findAll());
     }
 }
