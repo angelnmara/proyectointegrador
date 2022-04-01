@@ -1,9 +1,8 @@
 package com.lamarrulla.proyectointegrador.controller;
 
 import com.lamarrulla.proyectointegrador.dto.BrandDTO;
-import com.lamarrulla.proyectointegrador.dto.ModeloDTO;
 import com.lamarrulla.proyectointegrador.service.BrandService;
-import com.lamarrulla.proyectointegrador.vo.Delete;
+import com.lamarrulla.proyectointegrador.vo.DeleteMsg;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,6 +40,6 @@ public class BrandController {
     @DeleteMapping("/brand")
     public ResponseEntity<String> delete(@RequestBody BrandDTO brandDTO){
         brandService.delete(brandDTO);
-        return ResponseEntity.ok(new Delete("marca").toString());
+        return ResponseEntity.ok(new DeleteMsg("marca").getValue());
     }
 }
