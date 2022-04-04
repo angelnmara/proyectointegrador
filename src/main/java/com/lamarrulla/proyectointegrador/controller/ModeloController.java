@@ -20,6 +20,11 @@ public class ModeloController {
         return ResponseEntity.ok(modeloService.save(modeloDTO));
     }
 
+    @PutMapping("/model")
+    public ResponseEntity<ModeloDTO> updateModelo(@RequestBody ModeloDTO modeloDTO){
+        return ResponseEntity.ok(modeloService.save(modeloDTO));
+    }
+
     @GetMapping("/model/{id}")
     public ResponseEntity<ModeloDTO> getModelo(@PathVariable Long id){
         return ResponseEntity.ok(modeloService.findById(id));
@@ -28,5 +33,11 @@ public class ModeloController {
     @GetMapping("/model")
     public ResponseEntity<List<ModeloDTO>> getModelo(){
         return ResponseEntity.ok(modeloService.findAll());
+    }
+
+    @DeleteMapping("/model")
+    public ResponseEntity<String> deleteModelo(@RequestBody ModeloDTO modeloDTO){
+        modeloService.delete(modeloDTO);
+        return ResponseEntity.ok("Modelo eliminado correctamente");
     }
 }

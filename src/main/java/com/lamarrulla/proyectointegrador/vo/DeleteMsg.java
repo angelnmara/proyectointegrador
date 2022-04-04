@@ -7,6 +7,6 @@ public class DeleteMsg {
     String value;
 
     public DeleteMsg(String value) {
-        this.value = String.format("%s se borro exitosamente", value);
+        this.value = value;
     }
 }

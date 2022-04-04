@@ -78,6 +78,8 @@ public class ArticleController {
     @DeleteMapping("/article")
     public ResponseEntity<String> deleteArticle(@RequestBody ArticleDTO articleDTO){
         articleService.delete(articleDTO);
-        return ResponseEntity.ok(new DeleteMsg("marca").getValue());
+        DeleteMsg deleteMsg= new DeleteMsg("marca");
+        String mensaje = "";//deleteMsg.getValue();
+        return ResponseEntity.ok(mensaje);
     }
 }
