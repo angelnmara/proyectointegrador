@@ -2,6 +2,7 @@ package com.lamarrulla.proyectointegrador.service.implement;
 
 import com.lamarrulla.proyectointegrador.dto.ModeloDTO;
 import com.lamarrulla.proyectointegrador.dto.mapper.ModeloMapper;
+import com.lamarrulla.proyectointegrador.entity.Modelo;
 import com.lamarrulla.proyectointegrador.repository.ModelRespository;
 import com.lamarrulla.proyectointegrador.service.ModeloService;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,8 @@ public class ModeloServiceImpl implements ModeloService {
 
     @Override
     public ModeloDTO save(ModeloDTO modeloDTO) {
-        return modeloMapper.toDTO(modelRespository.save(modeloMapper.toEnitty(modeloDTO)));
+        Modelo modelo = modelRespository.save(modeloMapper.toEnitty(modeloDTO));
+        return modeloMapper.toDTO(modelo);
     }
 
     @Override

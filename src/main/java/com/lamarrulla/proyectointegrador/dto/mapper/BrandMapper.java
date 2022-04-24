@@ -6,7 +6,6 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper
 public interface BrandMapper {
     BrandDTO toDTO(Brand brand);
     List<BrandDTO> toDTOList(List<Brand> brandList);

@@ -16,10 +16,7 @@ public class Article {
     Double cost;
     Double retailPrice;
     int stock;
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name="idBrand")
-    private Brand brand;
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne
     @JoinColumn(name="idModel")
     private Modelo modelo;
 }

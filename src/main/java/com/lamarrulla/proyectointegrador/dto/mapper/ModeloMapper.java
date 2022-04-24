@@ -6,7 +6,6 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper
 public interface ModeloMapper {
     ModeloDTO toDTO(Modelo modelo);
     Modelo toEnitty(ModeloDTO modeloDTO);

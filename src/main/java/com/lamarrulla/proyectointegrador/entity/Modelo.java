@@ -1,7 +1,6 @@
 package com.lamarrulla.proyectointegrador.entity;
 
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Data
@@ -12,7 +11,6 @@ public class Modelo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int idModel;
     String description;
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name="idBrand")
+    @ManyToOne //(cascade=CascadeType.ALL)
     private Brand brand;
 }

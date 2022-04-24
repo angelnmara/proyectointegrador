@@ -12,6 +12,5 @@ public class ArticleDTO {
     Double cost;
     Double retailPrice;
     int stock;
-    private Brand brand;
     private Modelo modelo;
 }
