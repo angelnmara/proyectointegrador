@@ -5,8 +5,8 @@ import com.lamarrulla.proyectointegrador.dto.BrandDTO;
 import java.util.List;
 
 public interface BrandService {
-    BrandDTO findById(Long Id);
+    BrandDTO findById(Integer Id);
     List<BrandDTO> findAll();
     BrandDTO save(BrandDTO brandDTO);
-    void delete(BrandDTO brandDTO);
+    void delete(Integer id);
 }

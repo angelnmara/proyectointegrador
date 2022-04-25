@@ -27,7 +27,7 @@ public class ModeloServiceImpl implements ModeloService {
     }
 
     @Override
-    public ModeloDTO findById(Long id) {
+    public ModeloDTO findById(Integer id) {
         return modeloMapper.toDTO(modelRespository.findById(id).get());
     }
 
@@ -37,7 +37,7 @@ public class ModeloServiceImpl implements ModeloService {
     }
 
     @Override
-    public void delete(ModeloDTO modeloDTO) {
-        modelRespository.delete(modeloMapper.toEnitty(modeloDTO));
+    public void deleteById(Integer id) {
+        modelRespository.delete(modeloMapper.toEnitty(findById(id)));
     }
 }

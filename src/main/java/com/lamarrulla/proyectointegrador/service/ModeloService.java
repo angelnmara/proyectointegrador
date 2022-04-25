@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ModeloService {
     ModeloDTO save(ModeloDTO modeloDTO);
-    ModeloDTO findById(Long id);
+    ModeloDTO findById(Integer id);
     List<ModeloDTO> findAll();
-    void delete(ModeloDTO modeloDTO);
+    void deleteById(Integer id);
 }

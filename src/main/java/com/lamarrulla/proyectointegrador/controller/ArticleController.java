@@ -28,7 +28,7 @@ public class ArticleController {
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
     @GetMapping("/article/{id}")
-    public ResponseEntity<ArticleDTO> getArticle(@PathVariable Long id){
+    public ResponseEntity<ArticleDTO> getArticle(@PathVariable Integer id){
         return ResponseEntity.ok(articleService.findById(id));
     }
 

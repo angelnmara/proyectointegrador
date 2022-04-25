@@ -26,7 +26,7 @@ public class ModeloController {
     }
 
     @GetMapping("/model/{id}")
-    public ResponseEntity<ModeloDTO> getModelo(@PathVariable Long id){
+    public ResponseEntity<ModeloDTO> getModelo(@PathVariable Integer id){
         return ResponseEntity.ok(modeloService.findById(id));
     }
 
@@ -35,9 +35,9 @@ public class ModeloController {
         return ResponseEntity.ok(modeloService.findAll());
     }
 
-    @DeleteMapping("/model")
-    public ResponseEntity<String> deleteModelo(@RequestBody ModeloDTO modeloDTO){
-        modeloService.delete(modeloDTO);
+    @DeleteMapping("/model/{id}")
+    public ResponseEntity<String> deleteModelo(@PathVariable Integer id){
+        modeloService.deleteById(id);
         return ResponseEntity.ok("Modelo eliminado correctamente");
     }
 }

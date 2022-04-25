@@ -28,7 +28,7 @@ public class BrandController {
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
     @GetMapping("/brand/{id}")
-    public ResponseEntity<BrandDTO> findById(@PathVariable Long id){
+    public ResponseEntity<BrandDTO> findById(@PathVariable Integer id){
         return ResponseEntity.ok(brandService.findById(id));
     }
 
@@ -63,23 +63,24 @@ public class BrandController {
             @ApiResponse( code = 403, message = "Está prohibido acceder al recurso"),
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
+
     @GetMapping("/brand")
     public ResponseEntity<List<BrandDTO>> findAll(){
         return ResponseEntity.ok(brandService.findAll());
     }
 
-    @ApiOperation( value = "Borra articulo")
+    @ApiOperation( value = "Borra articulo por id")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
             @ApiResponse( code = 403, message = "Está prohibido acceder al recurso"),
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
-    @DeleteMapping("/brand")
-    public ResponseEntity<String> delete(@RequestBody BrandDTO brandDTO){
-        brandService.delete(brandDTO);
+    @DeleteMapping("/brand/{id}")
+    public ResponseEntity<String> delete(@PathVariable Integer id){
+        brandService.delete(id);
         DeleteMsg deleteMsg = new DeleteMsg("marca");
-        String mensaje = "";//deleteMsg.getValue();
+        String mensaje = "Marca borrada exitosamente";//deleteMsg.getValue();
         return ResponseEntity.ok(mensaje);
     }
 }

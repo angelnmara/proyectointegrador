@@ -25,7 +25,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public ArticleDTO findById(Long id) {
+    public ArticleDTO findById(Integer id) {
         return articleMapper.toDTO(articleRepository.findById(id).get());
     }
 

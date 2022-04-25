@@ -20,8 +20,8 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
-    public BrandDTO findById(Long id) {
-        return brandMapper.toDTO(brandRepository.findById(id).get());
+    public BrandDTO findById(Integer id) {
+        return brandMapper.toDTO(brandRepository.findById(id).stream().findFirst().get());
     }
 
     @Override
@@ -35,7 +35,7 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
-    public void delete(BrandDTO brandDTO) {
-        brandRepository.delete(brandMapper.toEntity(brandDTO));
+    public void delete(Integer id) {
+        brandRepository.delete(brandMapper.toEntity(findById(id)));
     }
 }
