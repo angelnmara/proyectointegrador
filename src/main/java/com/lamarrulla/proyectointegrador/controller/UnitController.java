@@ -41,4 +41,12 @@ public class UnitController {
         return ResponseEntity.ok("Unidad eliminada satisfacoriamente");
     }
 
+    @GetMapping("/unit/noEcon/{noEcon}")
+    public ResponseEntity<List<UnitDTO>> getUnitByNoEcon(@PathVariable String noEcon){
+        StringBuilder stringBuilder =  new StringBuilder("%");
+        stringBuilder.append(noEcon).append("%");
+        List<UnitDTO> unitDTOList = unitService.findByNoEconLike(stringBuilder.toString());
+        return ResponseEntity.ok(unitDTOList);
+    }
+
 }

@@ -10,4 +10,8 @@ public interface UnitService {
     List<UnitDTO> findAll();
     void deleteById(Integer id);
 
+    List<UnitDTO> findByNoEconContains(String noEcon);
+
+    List<UnitDTO> findByNoEconLike(String noEcon);
+
 }

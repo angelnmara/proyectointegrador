@@ -44,4 +44,16 @@ public class UnitServiceImpl implements UnitService {
     public void deleteById(Integer id) {
         unitRepository.delete(unitMapper.toEnity(findById(id)));
     }
+
+    @Override
+    public List<UnitDTO> findByNoEconContains(String noEcon) {
+        List<UnitDTO> unitDTOList = unitMapper.toDTOList(unitRepository.findByNoEconContains(noEcon));
+        return unitDTOList;
+    }
+
+    @Override
+    public List<UnitDTO> findByNoEconLike(String noEcon) {
+        List<UnitDTO> unitDTOList = unitMapper.toDTOList(unitRepository.findByNoEconLike(noEcon));
+        return unitDTOList;
+    }
 }
