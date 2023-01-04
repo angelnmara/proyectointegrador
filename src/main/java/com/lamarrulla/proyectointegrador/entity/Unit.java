@@ -2,10 +2,7 @@ package com.lamarrulla.proyectointegrador.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -14,6 +11,7 @@ public class Unit {
     @Id
     @GeneratedValue
     int idUnit;
+    @Column(unique=true)
     String noEcon;
     String placas;
     String tipo;
