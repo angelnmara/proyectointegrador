@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class MantenimientoController {
+public class MaintenanceController {
     private final MantenimientoService mantenimientoService;
 
-    public MantenimientoController(MantenimientoService mantenimientoService) {
+    public MaintenanceController(MantenimientoService mantenimientoService) {
         this.mantenimientoService = mantenimientoService;
     }
 

@@ -6,10 +6,10 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="brand")
-public class Brand {
+@Table(name="enterprise")
+public class Enterprise {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int idBrand;
-    String descBrand;
+    int idEnterprise;
+    String descEnterprise;
 }

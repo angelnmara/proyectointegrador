@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class BrandDTO {
     int idBrand;
-    String description;
+    String descBrand;
 }

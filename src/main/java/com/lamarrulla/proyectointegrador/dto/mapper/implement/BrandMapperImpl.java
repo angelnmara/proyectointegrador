@@ -14,7 +14,7 @@ public class BrandMapperImpl implements BrandMapper {
     public BrandDTO toDTO(Brand brand) {
         BrandDTO brandDTO = new BrandDTO();
         brandDTO.setIdBrand(brand.getIdBrand());
-        brandDTO.setDescription(brand.getDescription());
+        brandDTO.setDescBrand(brand.getDescBrand());
         return brandDTO;
     }
 
@@ -27,7 +27,7 @@ public class BrandMapperImpl implements BrandMapper {
     public Brand toEntity(BrandDTO brandDTO) {
         Brand brand = new Brand();
         brand.setIdBrand(brandDTO.getIdBrand());
-        brand.setDescription(brandDTO.getDescription());
+        brand.setDescBrand(brandDTO.getDescBrand());
         return brand;
     }
 }
