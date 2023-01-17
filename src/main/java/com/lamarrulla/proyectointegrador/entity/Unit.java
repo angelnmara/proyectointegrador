@@ -17,4 +17,5 @@ public class Unit {
     String tipo;
     String color;
     String operador;
+    String imagen;
 }

@@ -10,4 +10,5 @@ public class UnitDTO {
     String tipo;
     String color;
     String operador;
+    String imagen;
 }
