@@ -38,8 +38,8 @@ public class UnitMapperImpl implements UnitMapper {
         unit.setPlacas(unitDTO.getPlacas());
         unit.setOperador(unitDTO.getOperador());
         unit.setNoEcon(unitDTO.getNoEcon());
-        unit.setIdUnit(unit.getIdUnit());
-        unit.setImagen(unit.getImagen());
+        unit.setIdUnit(unitDTO.getIdUnit());
+        unit.setImagen(unitDTO.getImagen());
         return unit;
     }
 
