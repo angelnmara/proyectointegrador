@@ -6,8 +6,8 @@ import lombok.Data;
 public class UnitDTO {
     int idUnit;
     String noEcon;
-    String placas;
-    String tipo;
+    String plates;
+    String kind;
     String color;
     String operador;
     String imagen;

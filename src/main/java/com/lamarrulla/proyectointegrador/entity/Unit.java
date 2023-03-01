@@ -13,8 +13,8 @@ public class Unit {
     int idUnit;
     @Column(unique=true)
     String noEcon;
-    String placas;
-    String tipo;
+    String plates;
+    String kind;
     String color;
     String operador;
     String imagen;

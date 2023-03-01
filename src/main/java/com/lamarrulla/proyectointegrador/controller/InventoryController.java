@@ -20,7 +20,7 @@ public class InventoryController {
         this.inventoryService = inventoryService;
     }
 
-    @ApiOperation( value = "Obtiene articulos por Id")
+    @ApiOperation( value = "Obtiene inventory por Id")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
@@ -51,7 +51,7 @@ public class InventoryController {
             @ApiResponse( code = 403, message = "Está prohibido acceder al recurso"),
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
-    @PostMapping("/article")
+    @PostMapping("/inventory")
     public ResponseEntity<InventoryDTO> saveArticle(@RequestBody InventoryDTO inventoryDTO){
         return ResponseEntity.ok(inventoryService.save(inventoryDTO));
     }

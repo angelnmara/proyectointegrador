@@ -3,8 +3,8 @@ package com.lamarrulla.proyectointegrador.dto;
 import com.lamarrulla.proyectointegrador.entity.Unit;
 import lombok.Data;
 @Data
-public class MantenanceDTO {
-    int idMantenance;
+public class MaintenanceDTO {
+    int idMaintenance;
     Unit unit;
     String pieza;
     String evidencia;

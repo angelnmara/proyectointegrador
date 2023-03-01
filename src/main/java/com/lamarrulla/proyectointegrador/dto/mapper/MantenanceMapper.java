@@ -1,12 +1,12 @@
 package com.lamarrulla.proyectointegrador.dto.mapper;
 
-import com.lamarrulla.proyectointegrador.dto.MantenanceDTO;
-import com.lamarrulla.proyectointegrador.entity.Mantenance;
+import com.lamarrulla.proyectointegrador.dto.MaintenanceDTO;
+import com.lamarrulla.proyectointegrador.entity.Maintenance;
 
 import java.util.List;
 
 public interface MantenanceMapper {
-    MantenanceDTO toDTO(Mantenance mantenance);
-    Mantenance toEntity(MantenanceDTO mantenanceDTO);
-    List<MantenanceDTO> toDTOList(List<Mantenance> mantenanceList);
+    MaintenanceDTO toDTO(Maintenance maintenance);
+    Maintenance toEntity(MaintenanceDTO maintenanceDTO);
+    List<MaintenanceDTO> toDTOList(List<Maintenance> maintenanceList);
 }

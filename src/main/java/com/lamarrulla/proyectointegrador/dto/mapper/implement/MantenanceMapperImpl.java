@@ -1,8 +1,8 @@
 package com.lamarrulla.proyectointegrador.dto.mapper.implement;
 
-import com.lamarrulla.proyectointegrador.dto.MantenanceDTO;
+import com.lamarrulla.proyectointegrador.dto.MaintenanceDTO;
 import com.lamarrulla.proyectointegrador.dto.mapper.MantenanceMapper;
-import com.lamarrulla.proyectointegrador.entity.Mantenance;
+import com.lamarrulla.proyectointegrador.entity.Maintenance;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -12,31 +12,31 @@ import java.util.stream.Collectors;
 public class MantenanceMapperImpl implements MantenanceMapper {
 
     @Override
-    public MantenanceDTO toDTO(Mantenance mantenance) {
-        MantenanceDTO mantenanceDTO = new MantenanceDTO();
-        mantenanceDTO.setIdMantenance(mantenance.getIdMantenance());
-        mantenanceDTO.setEvidencia(mantenance.getEvidencia());
-        mantenanceDTO.setPieza(mantenance.getPieza());
-        mantenanceDTO.setObservaciones(mantenance.getObservaciones());
-        mantenanceDTO.setUsuario(mantenance.getUsuario());
-        mantenanceDTO.setUnit(mantenance.getUnit());
-        return mantenanceDTO;
+    public MaintenanceDTO toDTO(Maintenance maintenance) {
+        MaintenanceDTO maintenanceDTO = new MaintenanceDTO();
+        maintenanceDTO.setIdMaintenance(maintenance.getIdMaintenance());
+        maintenanceDTO.setEvidencia(maintenance.getEvidencia());
+        maintenanceDTO.setPieza(maintenance.getPieza());
+        maintenanceDTO.setObservaciones(maintenance.getObservaciones());
+        maintenanceDTO.setUsuario(maintenance.getUsuario());
+        maintenanceDTO.setUnit(maintenance.getUnit());
+        return maintenanceDTO;
     }
 
     @Override
-    public Mantenance toEntity(MantenanceDTO mantenanceDTO) {
-        Mantenance mantenance = new Mantenance();
-        mantenance.setEvidencia(mantenanceDTO.getEvidencia());
-        mantenance.setObservaciones(mantenanceDTO.getObservaciones());
-        mantenance.setUsuario(mantenanceDTO.getUsuario());
-        mantenance.setPieza(mantenanceDTO.getPieza());
-        mantenance.setIdMantenance(mantenance.getIdMantenance());
-        mantenance.setUnit(mantenanceDTO.getUnit());
-        return mantenance;
+    public Maintenance toEntity(MaintenanceDTO maintenanceDTO) {
+        Maintenance maintenance = new Maintenance();
+        maintenance.setEvidencia(maintenanceDTO.getEvidencia());
+        maintenance.setObservaciones(maintenanceDTO.getObservaciones());
+        maintenance.setUsuario(maintenanceDTO.getUsuario());
+        maintenance.setPieza(maintenanceDTO.getPieza());
+        maintenance.setIdMaintenance(maintenance.getIdMaintenance());
+        maintenance.setUnit(maintenanceDTO.getUnit());
+        return maintenance;
     }
 
     @Override
-    public List<MantenanceDTO> toDTOList(List<Mantenance> mantenanceList) {
-        return mantenanceList.stream().map(x->toDTO(x)).collect(Collectors.toList());
+    public List<MaintenanceDTO> toDTOList(List<Maintenance> maintenanceList) {
+        return maintenanceList.stream().map(x->toDTO(x)).collect(Collectors.toList());
     }
 }

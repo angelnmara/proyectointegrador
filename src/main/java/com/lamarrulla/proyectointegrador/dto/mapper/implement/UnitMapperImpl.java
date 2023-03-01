@@ -21,9 +21,9 @@ public class UnitMapperImpl implements UnitMapper {
     public UnitDTO toDTO(Unit unit) {
         UnitDTO unitDTO = new UnitDTO();
         unitDTO.setColor(unit.getColor());
-        unitDTO.setTipo(unit.getTipo());
+        unitDTO.setKind(unit.getKind());
         unitDTO.setIdUnit(unit.getIdUnit());
-        unitDTO.setPlacas(unit.getPlacas());
+        unitDTO.setPlates(unit.getPlates());
         unitDTO.setOperador(unit.getOperador());
         unitDTO.setNoEcon(unit.getNoEcon());
         unitDTO.setImagen(unit.getImagen());
@@ -34,8 +34,8 @@ public class UnitMapperImpl implements UnitMapper {
     public Unit toEnity(UnitDTO unitDTO) {
         Unit unit = new Unit();
         unit.setColor(unitDTO.getColor());
-        unit.setTipo(unitDTO.getTipo());
-        unit.setPlacas(unitDTO.getPlacas());
+        unit.setKind(unitDTO.getKind());
+        unit.setPlates(unitDTO.getPlates());
         unit.setOperador(unitDTO.getOperador());
         unit.setNoEcon(unitDTO.getNoEcon());
         unit.setIdUnit(unitDTO.getIdUnit());

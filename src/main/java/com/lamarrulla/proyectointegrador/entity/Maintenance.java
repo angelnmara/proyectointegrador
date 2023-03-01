@@ -7,10 +7,10 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name="mantenimiento")
-public class Mantenance {
+public class Maintenance {
     @Id
     @GeneratedValue
-    int idMantenance;
+    int idMaintenance;
     @ManyToOne
     @JoinColumn(name="idUnit", referencedColumnName = "idUnit")
     Unit unit;
