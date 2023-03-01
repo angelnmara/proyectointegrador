@@ -7,10 +7,10 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name="article")
-public class Article {
+public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int idArticle;
+    int idInventory;
     int sku;
     String description;
     Double cost;

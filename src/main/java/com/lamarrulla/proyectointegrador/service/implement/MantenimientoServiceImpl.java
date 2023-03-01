@@ -1,7 +1,7 @@
 package com.lamarrulla.proyectointegrador.service.implement;
 
-import com.lamarrulla.proyectointegrador.dto.MantenimientoDTO;
-import com.lamarrulla.proyectointegrador.dto.mapper.MantenimientoMapper;
+import com.lamarrulla.proyectointegrador.dto.MantenanceDTO;
+import com.lamarrulla.proyectointegrador.dto.mapper.MantenanceMapper;
 import com.lamarrulla.proyectointegrador.repository.MantenimientoRepository;
 import com.lamarrulla.proyectointegrador.service.MantenimientoService;
 import org.springframework.stereotype.Service;
@@ -11,25 +11,25 @@ import java.util.List;
 @Service
 public class MantenimientoServiceImpl implements MantenimientoService {
     private final MantenimientoRepository mantenimientoRepository;
-    private final MantenimientoMapper mantenimientoMapper;
+    private final MantenanceMapper mantenanceMapper;
 
-    public MantenimientoServiceImpl(MantenimientoRepository mantenimientoRepository, MantenimientoMapper mantenimientoMapper) {
+    public MantenimientoServiceImpl(MantenimientoRepository mantenimientoRepository, MantenanceMapper mantenanceMapper) {
         this.mantenimientoRepository = mantenimientoRepository;
-        this.mantenimientoMapper = mantenimientoMapper;
+        this.mantenanceMapper = mantenanceMapper;
     }
 
     @Override
-    public MantenimientoDTO save(MantenimientoDTO mantenimientoDTO) {
-        return mantenimientoMapper.toDTO(mantenimientoRepository.save(mantenimientoMapper.toEntity(mantenimientoDTO)));
+    public MantenanceDTO save(MantenanceDTO mantenanceDTO) {
+        return mantenanceMapper.toDTO(mantenimientoRepository.save(mantenanceMapper.toEntity(mantenanceDTO)));
     }
 
     @Override
-    public MantenimientoDTO findById(Integer id) {
-        return mantenimientoMapper.toDTO(mantenimientoRepository.findById(id).get());
+    public MantenanceDTO findById(Integer id) {
+        return mantenanceMapper.toDTO(mantenimientoRepository.findById(id).get());
     }
 
     @Override
-    public List<MantenimientoDTO> getAll() {
-        return mantenimientoMapper.toDTOList(mantenimientoRepository.findAll());
+    public List<MantenanceDTO> getAll() {
+        return mantenanceMapper.toDTOList(mantenimientoRepository.findAll());
     }
 }

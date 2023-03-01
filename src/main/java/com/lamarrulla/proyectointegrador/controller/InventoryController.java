@@ -1,7 +1,7 @@
 package com.lamarrulla.proyectointegrador.controller;
 
-import com.lamarrulla.proyectointegrador.dto.ArticleDTO;
-import com.lamarrulla.proyectointegrador.service.ArticleService;
+import com.lamarrulla.proyectointegrador.dto.InventoryDTO;
+import com.lamarrulla.proyectointegrador.service.InventoryService;
 import com.lamarrulla.proyectointegrador.vo.DeleteMsg;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class ArticleController {
+public class InventoryController {
 
-    private final ArticleService articleService;
+    private final InventoryService inventoryService;
 
-    public ArticleController(ArticleService articleService) {
-        this.articleService = articleService;
+    public InventoryController(InventoryService inventoryService) {
+        this.inventoryService = inventoryService;
     }
 
     @ApiOperation( value = "Obtiene articulos por Id")
@@ -27,24 +27,24 @@ public class ArticleController {
             @ApiResponse( code = 403, message = "Está prohibido acceder al recurso"),
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
-    @GetMapping("/article/{id}")
-    public ResponseEntity<ArticleDTO> getArticle(@PathVariable Integer id){
-        return ResponseEntity.ok(articleService.findById(id));
+    @GetMapping("/inventory/{id}")
+    public ResponseEntity<InventoryDTO> getArticle(@PathVariable Integer id){
+        return ResponseEntity.ok(inventoryService.findById(id));
     }
 
-    @ApiOperation( value = "Obtiene todos los articulos")
+    @ApiOperation( value = "Obtiene todo el inventory")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
             @ApiResponse( code = 403, message = "Está prohibido acceder al recurso"),
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
-    @GetMapping("/article")
-    public ResponseEntity<List<ArticleDTO>> getArticle(){
-        return ResponseEntity.ok(articleService.findAll());
+    @GetMapping("/inventory")
+    public ResponseEntity<List<InventoryDTO>> getArticle(){
+        return ResponseEntity.ok(inventoryService.findAll());
     }
 
-    @ApiOperation( value = "Guarda articulo")
+    @ApiOperation( value = "Guarda inventory")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
@@ -52,32 +52,32 @@ public class ArticleController {
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
     @PostMapping("/article")
-    public ResponseEntity<ArticleDTO> saveArticle(@RequestBody ArticleDTO articleDTO){
-        return ResponseEntity.ok(articleService.save(articleDTO));
+    public ResponseEntity<InventoryDTO> saveArticle(@RequestBody InventoryDTO inventoryDTO){
+        return ResponseEntity.ok(inventoryService.save(inventoryDTO));
     }
 
-    @ApiOperation( value = "Actualiza articulo")
+    @ApiOperation( value = "Actualiza inventory")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
             @ApiResponse( code = 403, message = "Está prohibido acceder al recurso"),
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
-    @PutMapping("/article")
-    public ResponseEntity<ArticleDTO> updateArticle(@RequestBody ArticleDTO articleDTO){
-        return ResponseEntity.ok(articleService.save(articleDTO));
+    @PutMapping("/inventory")
+    public ResponseEntity<InventoryDTO> updateArticle(@RequestBody InventoryDTO inventoryDTO){
+        return ResponseEntity.ok(inventoryService.save(inventoryDTO));
     }
 
-    @ApiOperation( value = "Borra articulo")
+    @ApiOperation( value = "Borra inventory")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
             @ApiResponse( code = 403, message = "Está prohibido acceder al recurso"),
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
-    @DeleteMapping("/article")
-    public ResponseEntity<String> deleteArticle(@RequestBody ArticleDTO articleDTO){
-        articleService.delete(articleDTO);
+    @DeleteMapping("/inventory")
+    public ResponseEntity<String> deleteArticle(@RequestBody InventoryDTO inventoryDTO){
+        inventoryService.delete(inventoryDTO);
         DeleteMsg deleteMsg= new DeleteMsg("marca");
         String mensaje = "";//deleteMsg.getValue();
         return ResponseEntity.ok(mensaje);

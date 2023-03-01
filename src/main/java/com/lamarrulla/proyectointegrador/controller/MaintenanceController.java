@@ -1,6 +1,6 @@
 package com.lamarrulla.proyectointegrador.controller;
 
-import com.lamarrulla.proyectointegrador.dto.MantenimientoDTO;
+import com.lamarrulla.proyectointegrador.dto.MantenanceDTO;
 import com.lamarrulla.proyectointegrador.service.MantenimientoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,11 +19,11 @@ public class MaintenanceController {
     }
 
     @PostMapping("/mantenimiento")
-    public ResponseEntity<MantenimientoDTO> save(@RequestBody MantenimientoDTO mantenimientoDTO){
-        return ResponseEntity.ok(mantenimientoService.save(mantenimientoDTO));
+    public ResponseEntity<MantenanceDTO> save(@RequestBody MantenanceDTO mantenanceDTO){
+        return ResponseEntity.ok(mantenimientoService.save(mantenanceDTO));
     }
     @GetMapping("/mantenimiento/all")
-    public ResponseEntity<List<MantenimientoDTO>> get(){
+    public ResponseEntity<List<MantenanceDTO>> get(){
         return ResponseEntity.ok(mantenimientoService.getAll());
     }
 }

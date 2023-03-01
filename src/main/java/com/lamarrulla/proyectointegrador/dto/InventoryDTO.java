@@ -1,12 +1,11 @@
 package com.lamarrulla.proyectointegrador.dto;
 
-import com.lamarrulla.proyectointegrador.entity.Brand;
 import com.lamarrulla.proyectointegrador.entity.Modelo;
 import lombok.Data;
 
 @Data
-public class ArticleDTO {
-    int idArticle;
+public class InventoryDTO {
+    int idInventory;
     int sku;
     String description;
     Double cost;
