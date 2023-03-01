@@ -1,13 +1,12 @@
 package com.lamarrulla.proyectointegrador.dto.mapper;
 
-import com.lamarrulla.proyectointegrador.dto.ModeloDTO;
+import com.lamarrulla.proyectointegrador.dto.ModelDTO;
 import com.lamarrulla.proyectointegrador.entity.Modelo;
-import org.mapstruct.Mapper;
 
 import java.util.List;
 
 public interface ModeloMapper {
-    ModeloDTO toDTO(Modelo modelo);
-    Modelo toEnitty(ModeloDTO modeloDTO);
-    List<ModeloDTO> toDTOList(List<Modelo> modeloList);
+    ModelDTO toDTO(Modelo modelo);
+    Modelo toEnitty(ModelDTO modelDTO);
+    List<ModelDTO> toDTOList(List<Modelo> modeloList);
 }
