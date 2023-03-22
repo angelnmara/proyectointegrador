@@ -24,16 +24,16 @@ public class KindServiceImpl implements KindService {
 
     @Override
     public List<KindDTO> findAll() {
-        return null;
+        return kindMapper.toDTOList(kindRepository.findAll());
     }
 
     @Override
     public KindDTO save(KindDTO kindDTO) {
-        return null;
+        return kindMapper.toDTO(kindRepository.save(kindMapper.toEntity(kindDTO)));
     }
 
     @Override
     public void delete(Integer id) {
-
+        kindRepository.deleteById(id);
     }
 }
