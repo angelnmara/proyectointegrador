@@ -16,7 +16,7 @@ public class MantenanceMapperImpl implements MantenanceMapper {
         MaintenanceDTO maintenanceDTO = new MaintenanceDTO();
         maintenanceDTO.setIdMaintenance(maintenance.getIdMaintenance());
         maintenanceDTO.setEvidencia(maintenance.getEvidencia());
-        maintenanceDTO.setPieza(maintenance.getPieza());
+        maintenanceDTO.setIdPieza(maintenance.getIdPieza());
         maintenanceDTO.setObservaciones(maintenance.getObservaciones());
         maintenanceDTO.setUsuario(maintenance.getUsuario());
         maintenanceDTO.setUnit(maintenance.getUnit());
@@ -29,7 +29,7 @@ public class MantenanceMapperImpl implements MantenanceMapper {
         maintenance.setEvidencia(maintenanceDTO.getEvidencia());
         maintenance.setObservaciones(maintenanceDTO.getObservaciones());
         maintenance.setUsuario(maintenanceDTO.getUsuario());
-        maintenance.setPieza(maintenanceDTO.getPieza());
+        maintenance.setIdPieza(maintenanceDTO.getIdPieza());
         maintenance.setIdMaintenance(maintenance.getIdMaintenance());
         maintenance.setUnit(maintenanceDTO.getUnit());
         return maintenance;

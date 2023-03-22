@@ -6,12 +6,12 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="article")
+@Table(name="inventory")
 public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int idInventory;
-    int sku;
+    String sku;
     String description;
     Double cost;
     Double retailPrice;

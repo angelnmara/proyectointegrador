@@ -22,7 +22,7 @@ public class MaintenanceController {
     public ResponseEntity<MaintenanceDTO> save(@RequestBody MaintenanceDTO maintenanceDTO){
         return ResponseEntity.ok(maintenanceService.save(maintenanceDTO));
     }
-    @GetMapping("/maintenance/all")
+    @GetMapping("/maintenance")
     public ResponseEntity<List<MaintenanceDTO>> get(){
         return ResponseEntity.ok(maintenanceService.getAll());
     }

@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="mantenimiento")
+@Table(name="maintenance")
 public class Maintenance {
     @Id
     @GeneratedValue
@@ -14,7 +14,9 @@ public class Maintenance {
     @ManyToOne
     @JoinColumn(name="idUnit", referencedColumnName = "idUnit")
     Unit unit;
-    String pieza;
+    @OneToOne
+    @JoinColumn(name="idPieza", referencedColumnName = "idModel")
+    Modelo idPieza;
     String evidencia;
     String observaciones;
     String usuario;

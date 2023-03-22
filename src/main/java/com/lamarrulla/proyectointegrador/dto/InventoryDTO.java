@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class InventoryDTO {
     int idInventory;
-    int sku;
+    String sku;
     String description;
     Double cost;
     Double retailPrice;
