@@ -11,6 +11,10 @@ public class Modelo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int idModel;
     String description;
-    @ManyToOne //(cascade=CascadeType.ALL)
-    private Brand brand;
+    @ManyToOne
+    @JoinColumn(name="idBrand", referencedColumnName = "idBrand")
+    private Brand idBrand;
+    @OneToOne
+    @JoinColumn(name="idKind", referencedColumnName = "idKind")
+    private Kind idKind;
 }

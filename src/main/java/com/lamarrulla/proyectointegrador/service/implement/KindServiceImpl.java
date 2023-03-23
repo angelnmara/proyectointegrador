@@ -4,9 +4,10 @@ import com.lamarrulla.proyectointegrador.dto.KindDTO;
 import com.lamarrulla.proyectointegrador.dto.mapper.KindMapper;
 import com.lamarrulla.proyectointegrador.repository.KindRepository;
 import com.lamarrulla.proyectointegrador.service.KindService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class KindServiceImpl implements KindService {
 
     private final KindRepository kindRepository;

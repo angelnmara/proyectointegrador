@@ -13,9 +13,10 @@ public class ModeloMapperImpl implements ModeloMapper {
     @Override
     public ModelDTO toDTO(Modelo modelo) {
         ModelDTO modelDTO = new ModelDTO();
-        modelDTO.setBrand(modelo.getBrand());
+        modelDTO.setIdBrand(modelo.getIdBrand());
         modelDTO.setDescription(modelo.getDescription());
         modelDTO.setIdModel(modelo.getIdModel());
+        modelDTO.setIdKind(modelo.getIdKind());
         return modelDTO;
     }
 
@@ -24,7 +25,8 @@ public class ModeloMapperImpl implements ModeloMapper {
         Modelo modelo = new Modelo();
         modelo.setIdModel(modelDTO.getIdModel());
         modelo.setDescription(modelDTO.getDescription());
-        modelo.setBrand(modelDTO.getBrand());
+        modelo.setIdBrand(modelDTO.getIdBrand());
+        modelo.setIdKind(modelDTO.getIdKind());
         return modelo;
     }
 

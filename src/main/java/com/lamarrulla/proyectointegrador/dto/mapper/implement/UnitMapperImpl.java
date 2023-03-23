@@ -20,26 +20,28 @@ public class UnitMapperImpl implements UnitMapper {
     @Override
     public UnitDTO toDTO(Unit unit) {
         UnitDTO unitDTO = new UnitDTO();
-        unitDTO.setColor(unit.getColor());
-        unitDTO.setKind(unit.getKind());
+        unitDTO.setIdColor(unit.getIdColor());
+        unitDTO.setIdModel(unit.getIdModel());
         unitDTO.setIdUnit(unit.getIdUnit());
         unitDTO.setPlates(unit.getPlates());
         unitDTO.setOperador(unit.getOperador());
         unitDTO.setNoEcon(unit.getNoEcon());
         unitDTO.setImagen(unit.getImagen());
+        unitDTO.setIdEnterprise(unit.getIdEnterprise());
         return unitDTO;
     }
 
     @Override
     public Unit toEnity(UnitDTO unitDTO) {
         Unit unit = new Unit();
-        unit.setColor(unitDTO.getColor());
-        unit.setKind(unitDTO.getKind());
+        unit.setIdColor(unitDTO.getIdColor());
+        unit.setIdModel(unitDTO.getIdModel());
         unit.setPlates(unitDTO.getPlates());
         unit.setOperador(unitDTO.getOperador());
         unit.setNoEcon(unitDTO.getNoEcon());
         unit.setIdUnit(unitDTO.getIdUnit());
         unit.setImagen(unitDTO.getImagen());
+        unit.setIdEnterprise(unitDTO.getIdEnterprise());
         return unit;
     }
 
