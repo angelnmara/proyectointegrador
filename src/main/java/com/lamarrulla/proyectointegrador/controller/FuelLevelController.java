@@ -1,7 +1,7 @@
 package com.lamarrulla.proyectointegrador.controller;
 
-import com.lamarrulla.proyectointegrador.dto.KindDTO;
-import com.lamarrulla.proyectointegrador.service.KindService;
+import com.lamarrulla.proyectointegrador.dto.FuelLevelDTO;
+import com.lamarrulla.proyectointegrador.service.FuelLevelService;
 import com.lamarrulla.proyectointegrador.vo.DeleteMsg;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/kind")
-public class KindController {
-    private final KindService kindService;
+@RequestMapping("/fuel-level")
+public class FuelLevelController {
+    private final FuelLevelService fuelLevelService;
 
-    public KindController(KindService kindService) {
-        this.kindService = kindService;
+    public FuelLevelController(FuelLevelService fuelLevelService) {
+        this.fuelLevelService = fuelLevelService;
     }
 
-    @ApiOperation( value = "Obtiene tipo por Id")
+    @ApiOperation( value = "Obtiene fuel level por Id")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
@@ -28,11 +28,11 @@ public class KindController {
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
     @GetMapping("/{id}")
-    public ResponseEntity<KindDTO> findById(@PathVariable Integer id){
-        return ResponseEntity.ok(kindService.findById(id));
+    public ResponseEntity<FuelLevelDTO> findById(@PathVariable Integer id){
+        return ResponseEntity.ok(fuelLevelService.findById(id));
     }
 
-    @ApiOperation( value = "Nueva tipo")
+    @ApiOperation( value = "Nuevo fuel level")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
@@ -40,11 +40,11 @@ public class KindController {
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
     @PostMapping
-    public ResponseEntity<KindDTO> save(@RequestBody KindDTO kindDTO){
-        return ResponseEntity.ok(kindService.save(kindDTO));
+    public ResponseEntity<FuelLevelDTO> save(@RequestBody FuelLevelDTO fuelLevelDTO){
+        return ResponseEntity.ok(fuelLevelService.save(fuelLevelDTO));
     }
 
-    @ApiOperation( value = "Actiualiza tipos")
+    @ApiOperation( value = "Actiualiza fuel level")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
@@ -52,11 +52,11 @@ public class KindController {
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
     @PutMapping
-    public ResponseEntity<KindDTO> update(@RequestBody KindDTO kindDTO){
-        return ResponseEntity.ok(kindService.save(kindDTO));
+    public ResponseEntity<FuelLevelDTO> update(@RequestBody FuelLevelDTO fuelLevelDTO){
+        return ResponseEntity.ok(fuelLevelService.save(fuelLevelDTO));
     }
 
-    @ApiOperation( value = "Obtiene todos los tipos")
+    @ApiOperation( value = "Obtiene todos fuel level")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
@@ -65,11 +65,11 @@ public class KindController {
     })
 
     @GetMapping
-    public ResponseEntity<List<KindDTO>> findAll(){
-        return ResponseEntity.ok(kindService.findAll());
+    public ResponseEntity<List<FuelLevelDTO>> findAll(){
+        return ResponseEntity.ok(fuelLevelService.findAll());
     }
 
-    @ApiOperation( value = "Borra tipo por id")
+    @ApiOperation( value = "Borra fuel-level por id")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
@@ -78,9 +78,9 @@ public class KindController {
     })
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable Integer id){
-        kindService.deleteById(id);
-        DeleteMsg deleteMsg = new DeleteMsg("tipo");
-        String mensaje = "Tipo borrado exitosamente";//deleteMsg.getValue();
+        fuelLevelService.deleteById(id);
+        DeleteMsg deleteMsg = new DeleteMsg("fuel level");
+        String mensaje = "Fuel level borrado exitosamente";//deleteMsg.getValue();
         return ResponseEntity.ok(mensaje);
     }
 

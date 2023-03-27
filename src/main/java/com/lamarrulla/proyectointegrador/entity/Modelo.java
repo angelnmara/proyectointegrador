@@ -10,7 +10,7 @@ public class Modelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int idModel;
-    String description;
+    String descModel;
     @ManyToOne
     @JoinColumn(name="idBrand", referencedColumnName = "idBrand")
     private Brand idBrand;

@@ -8,5 +8,5 @@ public interface KindService {
     KindDTO findById(Integer id);
     List<KindDTO> findAll();
     KindDTO save(KindDTO kindDTO);
-    void delete(Integer id);
+    void deleteById(Integer id);
 }

@@ -34,7 +34,7 @@ public class KindServiceImpl implements KindService {
     }
 
     @Override
-    public void delete(Integer id) {
+    public void deleteById(Integer id) {
         kindRepository.deleteById(id);
     }
 }

@@ -14,7 +14,7 @@ public class ModeloMapperImpl implements ModeloMapper {
     public ModelDTO toDTO(Modelo modelo) {
         ModelDTO modelDTO = new ModelDTO();
         modelDTO.setIdBrand(modelo.getIdBrand());
-        modelDTO.setDescription(modelo.getDescription());
+        modelDTO.setDescModel(modelo.getDescModel());
         modelDTO.setIdModel(modelo.getIdModel());
         modelDTO.setIdKind(modelo.getIdKind());
         return modelDTO;
@@ -24,7 +24,7 @@ public class ModeloMapperImpl implements ModeloMapper {
     public Modelo toEnitty(ModelDTO modelDTO) {
         Modelo modelo = new Modelo();
         modelo.setIdModel(modelDTO.getIdModel());
-        modelo.setDescription(modelDTO.getDescription());
+        modelo.setDescModel(modelDTO.getDescModel());
         modelo.setIdBrand(modelDTO.getIdBrand());
         modelo.setIdKind(modelDTO.getIdKind());
         return modelo;

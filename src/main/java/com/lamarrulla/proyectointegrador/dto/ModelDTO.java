@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class ModelDTO {
     int idModel;
-    String description;
+    String descModel;
     private Brand idBrand;
     private Kind idKind;
 }
