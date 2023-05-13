@@ -6,13 +6,13 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="city")
-public class City {
+@Table(name="state")
+public class State {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int idCity;
-    String city;
+    int idState;
+    String state;
     @ManyToOne
-    @JoinColumn(name="idState", referencedColumnName = "idState")
-    State idState;
+    @JoinColumn(name="idCountry", referencedColumnName = "idCountry")
+    Country idCountry;
 }
