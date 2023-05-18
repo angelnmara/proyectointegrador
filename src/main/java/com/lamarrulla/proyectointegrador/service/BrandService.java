@@ -8,5 +8,5 @@ public interface BrandService {
     BrandDTO findById(Integer Id);
     List<BrandDTO> findAll();
     BrandDTO save(BrandDTO brandDTO);
-    void delete(Integer id);
+    void deleteById(Integer id);
 }

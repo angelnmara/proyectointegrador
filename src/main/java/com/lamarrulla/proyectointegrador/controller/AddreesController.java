@@ -1,7 +1,7 @@
 package com.lamarrulla.proyectointegrador.controller;
 
-import com.lamarrulla.proyectointegrador.dto.BrandDTO;
-import com.lamarrulla.proyectointegrador.service.BrandService;
+import com.lamarrulla.proyectointegrador.dto.AddreesDTO;
+import com.lamarrulla.proyectointegrador.service.AddreesService;
 import com.lamarrulla.proyectointegrador.vo.DeleteMsg;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -12,16 +12,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/private/brand")
-public class BrandController {
+@RequestMapping("/addrees")
+public class AddreesController {
+    private final AddreesService addreesService;
 
-    private final BrandService brandService;
-
-    public BrandController(BrandService brandService) {
-        this.brandService = brandService;
+    public AddreesController(AddreesService addreesService) {
+        this.addreesService = addreesService;
     }
 
-    @ApiOperation( value = "Obtiene marca por Id")
+    @ApiOperation( value = "Obtiene dirección por Id")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
@@ -29,11 +28,11 @@ public class BrandController {
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
     @GetMapping("/{id}")
-    public ResponseEntity<BrandDTO> findById(@PathVariable Integer id){
-        return ResponseEntity.ok(brandService.findById(id));
+    public ResponseEntity<AddreesDTO> findById(@PathVariable Integer id){
+        return ResponseEntity.ok(addreesService.findById(id));
     }
 
-    @ApiOperation( value = "Nueva marca")
+    @ApiOperation( value = "Nueva dirección")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
@@ -41,11 +40,11 @@ public class BrandController {
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
     @PostMapping
-    public ResponseEntity<BrandDTO> save(@RequestBody BrandDTO brandDTO){
-        return ResponseEntity.ok(brandService.save(brandDTO));
+    public ResponseEntity<AddreesDTO> save(@RequestBody AddreesDTO addreesDTO){
+        return ResponseEntity.ok(addreesService.save(addreesDTO));
     }
 
-    @ApiOperation( value = "Actiualiza marca")
+    @ApiOperation( value = "Actiualiza dirección")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
@@ -53,11 +52,11 @@ public class BrandController {
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
     @PutMapping
-    public ResponseEntity<BrandDTO> update(@RequestBody BrandDTO brandDTO){
-        return ResponseEntity.ok(brandService.save(brandDTO));
+    public ResponseEntity<AddreesDTO> update(@RequestBody AddreesDTO addreesDTO){
+        return ResponseEntity.ok(addreesService.save(addreesDTO));
     }
 
-    @ApiOperation( value = "Obtiene todos los articulos")
+    @ApiOperation( value = "Obtiene tod@s l@s direcciones")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
@@ -65,11 +64,11 @@ public class BrandController {
             @ApiResponse( code = 404, message = "No se encuentra el recurso")
     })
     @GetMapping
-    public ResponseEntity<List<BrandDTO>> findAll(){
-        return ResponseEntity.ok(brandService.findAll());
+    public ResponseEntity<List<AddreesDTO>> findAll(){
+        return ResponseEntity.ok(addreesService.findAll());
     }
 
-    @ApiOperation( value = "Borra articulo por id")
+    @ApiOperation( value = "Borra dirección por id")
     @ApiResponses( value = {
             @ApiResponse( code = 200, message = "Respuesta correcta"),
             @ApiResponse( code = 401, message = "No está autorizado para ver este recurso"),
@@ -78,9 +77,10 @@ public class BrandController {
     })
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable Integer id){
-        brandService.deleteById(id);
-        DeleteMsg deleteMsg = new DeleteMsg("marca");
-        String mensaje = "Marca borrada exitosamente";//deleteMsg.getValue();
+        addreesService.deleteById(id);
+        DeleteMsg deleteMsg = new DeleteMsg("direccion");
+        String mensaje = "Dirección borrada exitosamente";//deleteMsg.getValue();
         return ResponseEntity.ok(mensaje);
     }
+
 }

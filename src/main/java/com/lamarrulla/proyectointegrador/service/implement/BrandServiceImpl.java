@@ -35,7 +35,7 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
-    public void delete(Integer id) {
+    public void deleteById(Integer id) {
         brandRepository.delete(brandMapper.toEntity(findById(id)));
     }
 }
